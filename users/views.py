@@ -40,7 +40,6 @@ def predictEmotion(request):
         emotion_labels = ['neutral', 'happiness', 'sadness', 'surprise', 'anger', 'fearful', 'disgust', 'boredom']
         predicted_label = emotion_labels[np.argmax(predictions)]
         context={
-            'filePathName':filePathName,
             'predictedLabel':predicted_label
         }
         return redirect(reverse('users-predicts') + f'?{urlencode(context)}')
@@ -94,7 +93,6 @@ class CustomLoginView(LoginView):
 
         # else browser session will be as long as the session cookie time "SESSION_COOKIE_AGE" defined in settings.py
         return super(CustomLoginView, self).form_valid(form)
-
 
 class ChangePasswordView(SuccessMessageMixin, PasswordChangeView):
     template_name = 'users/change_password.html'

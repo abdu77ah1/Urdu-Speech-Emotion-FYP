@@ -1,5 +1,5 @@
 {% extends "users/base.html" %}
-{% block title %} Home Page {% endblock title%}
+{% block title %} USER {% endblock title%}
 {% block content %}
   <h2>Upload Audio for Emotion Classification</h2>
 
@@ -19,11 +19,7 @@
     </div>
     {% endif %}
     <br><br>
-    {% if 'filePathName' in request.GET %}
-      <div>
-          Audio File Path: {{request.GET.filePathName}}
-      </div>
-    {% endif %}
+
   </form>
 <br>
 
